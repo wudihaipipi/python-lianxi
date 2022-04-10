@@ -1,0 +1,67 @@
+“魔塔”的战斗机制
+import random
+import numpy as np
+gamer = np.random.randint(100, 150)
+army = np.random.randint(100, 150)
+attackg = np.random.randint(30, 50)
+attacka = np.random.randint(30, 50)
+print('玩家血量:', gamer, '攻击:', attackg)
+print('敌人血量:', army, '攻击:', attacka)
+while True:
+    if gamer > 0 and army > 0:
+        gamer = np.random.randint(gamer-10, gamer-1)
+        army = np.random.randint(army-10, army-1)
+        print('你发起了攻击，敌人剩余血量:', army)
+        print('敌人发起了攻击，玩家剩余血量:', gamer)
+    else:
+        if gamer < 0:
+            print('悲催，敌人把你干掉了!')
+            print('最终结果:你输了!')
+            break
+        else:
+            print('恭喜，你把敌人干掉了!')
+            print('最终结果:你赢了!')
+            break
+
+
+猜年龄小游戏：
+
+import random
+
+change = 0
+
+while change<=3:
+    answer = random.randint(1,30)
+    yanswer = int(input('请输入你的答案:'))
+    if yanswer == answer:
+        break
+    else:
+        print('答案错误!')
+    change+=1
+    if change == 3:
+        print('想不想再次参加?')
+        relay = input('请输入你的选择:')
+        if relay =='Y' or relay == 'y':
+            change = 0
+        elif relay =='N' or relay =='n':
+            change=4
+        else:
+            print('输入错误!')
+
+计算个人BMI指数并判断是否过胖
+
+high = float(input('请输入您的身高:'))
+weight = float(input('请输入您的体重:'))
+BMI = weight/high**2
+print('您的BMI指数为:', BMI)
+if BMI < 18.5:
+    print('您的体重过轻')
+elif 18.5 < BMI < 25:
+    print('您的体重正常')
+elif 25 < BMI < 28:
+    print('您的体重过重')
+elif 28 < BMI < 32:
+    print('您的体重肥胖')
+else :
+    print('您的体重严重肥胖')
+
